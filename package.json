@@ -1,0 +1,27 @@
+{
+  "name": "weight-tracker",
+  "version": "1.0.0",
+  "description": "A website that tracks a person's weight over time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenula/Weight-Tracker.git"
+  },
+  "keywords": [
+    "Weight",
+    "Track"
+  ],
+  "author": "Kenneth Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kenula/Weight-Tracker/issues"
+  },
+  "homepage": "https://github.com/Kenula/Weight-Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}
