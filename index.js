@@ -11,6 +11,7 @@ app.use(express.json({limit: '1mb'}));
 const port = 3000;
 app.listen(port, () => console.log(`Listening on ${port}`));
 
+//Handles inputting and retrieving names in the database
 app.post('/names', (req, res) => {
   database.insert(req.body);
   res.json(req.body);
@@ -25,4 +26,15 @@ app.get('/names', (req, res) => {
       res.json(data);
     }
   });
+});
+
+// Handles the current user's name
+global.user;
+app.post('/user', (req, res) => {
+  user = req.body;
+  res.json(user);
+});
+
+app.get('/user', (req, res) => {
+  res.json(user);
 });
