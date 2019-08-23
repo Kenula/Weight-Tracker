@@ -9,7 +9,22 @@
   </head>
   <body>
     <h1>Weight Tracking App</h1>
+    <p><a href='../'>Log Out</a> | <a href='input.html'>Input</a></p>
     <p id='greet'></p>
+    <p>Here's where you can log your weight measurements.</p>
+    <form>
+      <label for='date'>Enter the date you made the measurement: </label>
+      <input id='date' type='date' required>
+      <br>
+      <label for='weight'>Enter your weight (in pounds) on that day: </label>
+      <input id='weight' type='text' required>
+      <br>
+      <button id='submit' type='submit'>Submit</button>
+    </form>
+
+    <p>Your Entries:</p>
+    <div id='entries'></div>
+
 
     <script src='input.js'></script>
   </body>

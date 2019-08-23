@@ -57,9 +57,11 @@ async function passName(user) {
     body: JSON.stringify(data) 
   };
   const response = await fetch('/user', options);
-  const json = response.json();
+  const json = await response.json();
   console.log(json);
 }
+
+
 
 let names = [];
 
@@ -74,6 +76,7 @@ nameButton.addEventListener('click', () => {
     names.push(newName);
     console.log(names);
     postNames(newName);
+    passName(newName);
   }
 });
 

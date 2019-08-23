@@ -38,3 +38,27 @@ app.post('/user', (req, res) => {
 app.get('/user', (req, res) => {
   res.json(user);
 });
+
+//Handles weight and date inputs from the user
+app.post('/inputs', (req, res) => {
+  const data = req.body;
+  console.log(data);
+  database.update({ name: data.userName }, { $push: { entry: [data.date, data.weight] } }, {}, function () {
+    console.log('Worked!');
+    database.persistence.compactDatafile();
+  });
+  res.json(data);
+});
+
+app.get('/inputs/:name', (req, res) => {
+  const user = req.params.name; 
+  console.log(user);
+  database.find({ name: user }, (err, data) => {
+    if (err) {
+      res.end();
+      return;
+    } else {
+      res.json(data);
+    }
+  });
+});

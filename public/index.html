@@ -10,9 +10,10 @@
   <body>
     <h1>Weight Tracking App</h1>
     <p>New user? Enter your first and last name to be registered the database.</p>
-    <input id="new_name" type='text'>
-    <button id='name_submit' type='submit'>Submit</button>
-
+    <form action='/users/input.html'>
+      <input id="new_name" type='text'>
+      <button id='name_submit' type='submit'>Submit</button>
+    </form>
     <p>Existing user? Select your profile below.</p>
     <div id='existingNames'></div>
     <script src='script.js'></script>
