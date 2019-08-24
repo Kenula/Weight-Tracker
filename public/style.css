@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: rgb(231, 239, 253);
+}
+
+h1{
+  display: block;
+  margin: 0;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  background-color: rgb(177, 204, 253);
+  color: rgb(1, 1, 44);
+  border-bottom: double;
+}
+
+#nav{
+  display: block;
+  width: 100%;
+  margin: auto;
+  padding: 10px 0 10px 0;
+  background-color: rgb(206, 223, 252);
+  text-decoration: none;
+  border-bottom: double;
+}
+
+.navlink{
+  text-decoration: none;
+  color: rgb(30, 30, 129);
+  padding: 5px;
+}
+
+.navlink:hover{
+  font-weight: 900;
+}
+
+#greet{
+  font-size: 20px;
+  font-weight: 600;
+}
+input{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+canvas{
+  margin: 0 auto;
+}
+
+div{
+  margin: 0 auto;
+}
+
+#submit{
+  background-color: #4CAF50;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px auto 20px auto;
+  font-size: 16px;
+}
+
+#submit:hover{
+  background-color: rgb(60, 141, 62);
+  cursor: pointer;
+}
+
+#clear{
+  background-color: rgb(228, 72, 72);
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px auto 20px auto;
+  font-size: 16px;
+}
+
+#clear:hover{
+  background-color: rgb(155, 35, 35);
+  cursor: pointer;
+}

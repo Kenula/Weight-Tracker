@@ -9,7 +9,9 @@
   </head>
   <body>
     <h1>Weight Tracking App</h1>
-    <p><a href='../'>Log Out</a> | <a href='input.html'>Input</a> | <a href='chart.html'>Graph</a></p>
+    <p id='nav'><a href='../' class='navlink'>Log Out</a>
+      <a href='input.html' class='navlink' >Input</a>
+      <a href='chart.html'class='navlink'>Graph</a></p>
     <p id='greet'></p>
     <p>Here's where you can log your weight measurements.</p>
     <form>
@@ -22,6 +24,7 @@
     <p>Click here to <a href='chart.html'>view your entries on a graph.</a></p>
     <p>Your Entries:</p>
     <div id='entries'></div>
+    <button id='clear'>Clear Entries</button>
     <script src='input.js'></script>
   </body>
 </html>

@@ -78,3 +78,11 @@ app.get('/inputs/:name', (req, res) => {
     }
   });
 });
+
+// Deletes database entry when the 'clear entries' button is pressed
+app.post('/clear', (req, res) => {
+  database.update({ name: user.user }, { $set: { entry: [] } }, {}, function () {
+    database.persistence.compactDatafile();
+  });
+  res.send("Clear Successful");
+});

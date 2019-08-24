@@ -11,9 +11,11 @@
   </head>
   <body>
     <h1>Weight Tracking App</h1>
-    <p><a href='../'>Log Out</a> | <a href='input.html'>Input</a> | <a href='chart.html'>Graph</a></p>
+    <p id='nav'><a href='../' class='navlink'>Log Out</a>
+      <a href='input.html' class='navlink' >Input</a>
+      <a href='chart.html'class='navlink'>Graph</a></p>
     <p id='greet'></p>
-    <p>Here is a graph of all your weight measurements.</p>
+    <p>Here is a graph of your weight measurements.</p>
     <div style='width: 75%; height: 50%;'>
       <canvas id="myChart" height='400' width='400'></canvas>
     </div>

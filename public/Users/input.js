@@ -4,7 +4,7 @@ async function setup() {
   const response = await fetch('/user');
   const user = await response.json();
   userName = user.user;
-  document.getElementById('greet').innerText = 'Welcome ' + userName + '!';
+  document.getElementById('greet').innerText = 'Welcome, ' + userName + '!';
 
   // Configures the submit button to send date and weight when pressed
   const wdButton = document.getElementById('submit');
@@ -58,3 +58,10 @@ async function getInputs() {
 
 setup();
 
+// Button to clear all entries
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', async () => {
+  const response = await fetch('/clear', { method: 'POST'} );
+  console.log(response);
+  getInputs();
+})
