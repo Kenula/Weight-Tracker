@@ -22,6 +22,7 @@ async function getNames() {
   }
   console.log(names);
 
+  // Creating DOM elements (links) for each existing user)
   for (name of names) {
     let nameDiv = document.createElement('div');
     let a = document.createElement('a');
@@ -46,7 +47,7 @@ async function getNames() {
   }
 }
 
-// Passes the current user's name to the next page
+// Passes the current user's name to the server
 async function passName(user) {
   const data = {user};
   const options = {
@@ -60,8 +61,6 @@ async function passName(user) {
   const json = await response.json();
   console.log(json);
 }
-
-
 
 let names = [];
 

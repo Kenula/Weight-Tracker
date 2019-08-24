@@ -11,7 +11,7 @@ app.use(express.json({limit: '1mb'}));
 const port = 3000;
 app.listen(port, () => console.log(`Listening on ${port}`));
 
-//Handles inputting and retrieving names in the database
+// Handles inputting and retrieving names in the database
 app.post('/names', (req, res) => {
   database.insert(req.body);
   res.json(req.body);
@@ -39,20 +39,36 @@ app.get('/user', (req, res) => {
   res.json(user);
 });
 
-//Handles weight and date inputs from the user
+// Handles weight and date inputs from the user
 app.post('/inputs', (req, res) => {
   const data = req.body;
-  console.log(data);
   database.update({ name: data.userName }, { $push: { entry: [data.date, data.weight] } }, {}, function () {
-    console.log('Worked!');
     database.persistence.compactDatafile();
   });
+
+  // Sorts the inputs by date and updates the database
+  database.find({ name: data.userName }, (err, data) => {
+    let sortedValues = data[0].entry.slice();
+    
+    for (elem of sortedValues) {
+      elem[0] = elem[0].toString().split('-');
+    }
+    sortedValues.sort(function (a, b) {
+      return a[0][0] - b[0][0] || a[0][1] - b[0][1] || a[0][2] - b[0][2];
+    });
+    for (elem of sortedValues) {
+      elem[0] = elem[0].join('-');
+    }
+    database.update({ name: data[0].name }, { $set: { entry: sortedValues } }, {}, function () {
+      database.persistence.compactDatafile();
+    });
   res.json(data);
+  });
 });
 
+// Sends weight and date data for a specific user back to the client
 app.get('/inputs/:name', (req, res) => {
   const user = req.params.name; 
-  console.log(user);
   database.find({ name: user }, (err, data) => {
     if (err) {
       res.end();

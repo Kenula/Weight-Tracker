@@ -29,19 +29,16 @@ async function setup() {
         body: JSON.stringify(data)
       }
       const response = await fetch('/inputs', options);
-      const json = await response.json();
+      const jsond = await response.json();
       console.log(json);
       getInputs();
     }
   });
-
   getInputs();
 }
 
-
 // Function to retrieve weight and date values from the database
 async function getInputs() {
-
   const response = await fetch(`/inputs/${userName}`);
   const json = await response.json();
   const inputs = json[0].entry;
@@ -57,11 +54,7 @@ async function getInputs() {
     entryP.appendChild(content);
     entryDiv.appendChild(entryP);
   }
-  
-
 }
-
-
 
 setup();
 
