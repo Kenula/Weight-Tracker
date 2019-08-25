@@ -29,7 +29,7 @@ async function getNames() {
     let linkName = document.createTextNode(name);
     a.id = name;
     a.appendChild(linkName);
-    a.href = `users/input.html`;
+    a.href = `Users/input.html`;
     a.addEventListener('click', (event) => {
       if (!event)
           event = window.event;
