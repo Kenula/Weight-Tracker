@@ -11,13 +11,6 @@ app.use(express.json({limit: '1mb'}));
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on ${port}`));
 
-if(process.env.NODE_ENV === 'production'){
-  //set static folder
-  app.use(express.static('client/public'));
-}
-app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
-});
 
 // Handles inputting and retrieving names in the database
 app.post('/names', (req, res) => {
